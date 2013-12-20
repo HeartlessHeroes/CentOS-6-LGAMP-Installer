@@ -2,7 +2,7 @@
 
 clear
 
-echo 'Going to install the LAMP stack on your machine, here we go...'
+echo 'Going to install the GLAMP stack on your machine, here we go...'
 echo '------------------------'
 read -p "MySQL Password: " mysqlPassword
 read -p "Retype password: " mysqlPasswordRetype
