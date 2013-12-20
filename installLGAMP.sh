@@ -11,11 +11,15 @@ echo '------------------------'
 echo -p "Git username" gitUsername
 echo -p "Git email" gitEmail
 
-yum install -y httpd php mysql mysql-server git
+wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+rpm -ivh epel-release*
+yum repolist
+rm -f epel-release*
+
+yum install -y httpd php mysql mysql-server git phpmyadmin
 
 chkconfig mysql-server on
 chkconfig httpd on
-chkconfig add git
 
 /etc/init.d/mysqld restart
 
@@ -43,3 +47,4 @@ service mysqld start
 
 clear
 echo 'Okay.... Apache, PHP, MySQL and Git are installed and running.'
+echo 'Please change 127.0.0.1 to your IP address in this file /etc/httpd/conf.d/phpMyAdmin.config'
